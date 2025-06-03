@@ -3,12 +3,19 @@ import type { ReactNode } from "react";
 
 
 
-interface LocationData {
-  temperature: number;
-  feelsLike: number;
-  description: string;
-  humidity: number;
-  windSpeed: number;
+export interface LocationData {
+  name: string;
+  main: {
+    temp: number;
+    feels_like: number;
+    humidity: number;
+  };
+  weather: {
+    description: string;
+  }[];
+  wind: {
+    speed: number;
+  };
 }
 
 interface LocationContextType {
