@@ -25,7 +25,7 @@ const Navbar = () => {
         const lon = geoData[0].lon;
         
         // Fetching weather data using the geo-coordinates
-        const weatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+        const weatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
         const weather = await weatherData.json();
         if(!weather || weather.cod !== 200) {
           alert("Weather data not found. Please try again.");
