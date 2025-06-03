@@ -18,7 +18,6 @@ const Navbar = () => {
     else {
       try{
         // Fetching geo-coordinates for the search location
-        console.log(API_KEY)
         const geoCoordinates = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchLocation}&limit=1&APPID=${API_KEY}`);
         const geoData = await geoCoordinates.json();
         if(geoData.Length === 0) alert ("Location not found. Please try again.");
