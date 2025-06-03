@@ -22,9 +22,7 @@ AeroCast is a sleek and responsive weather forecast application that allows you 
 
 ## 📸 Screenshot
 
-> The image is stored in `src/assets/screenshot.png`
-
-![AeroCast Screenshot](src/assets/Screenshot 2025-06-03 204701.png)
+![App Screenshot](src/assets/AeroCast.png)
 
 ---
 
