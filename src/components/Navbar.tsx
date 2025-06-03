@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
   const fetchWeatherData = async () => {
-    if (searchLocation.trim() === "") {
+    if (searchLocation.trim() === "" || searchLocation.trim().length <= 3) {
       alert("Please enter a valid city name.");
       return;
     }
@@ -20,7 +20,7 @@ const Navbar = () => {
         // Fetching geo-coordinates for the search location
         const geoCoordinates = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchLocation}&limit=1&APPID=${API_KEY}`);
         const geoData = await geoCoordinates.json();
-        if(geoData.Length === 0) alert ("Location not found. Please try again.");
+        if(!geoData || geoData.length === 0) alert ("Location not found. Please try again.");
         const lat = geoData[0].lat;
         const lon = geoData[0].lon;
         
